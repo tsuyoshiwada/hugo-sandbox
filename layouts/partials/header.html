@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+  <head>
+    <meta charset="utf-8">
+    <link rel="alternate" href="__FIXME__" type="application/rss+xml" title="{{ .Site.Title }}">
+    <link rel="stylesheet" href="/highlight/styles/monokai-sublime.css">
+    <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
+  </head>
+  <body>
+    <div class="container">
+      <header role="banner">
+        <div class="header-logo">
+          <a href="/">{{ .Site.Title }}</a>
+        </div>
+        {{ if eq $isHomePage true }}<h1 class="site-title">{{ .Site.Title }}</h1>{{ end }}
+      </header>
